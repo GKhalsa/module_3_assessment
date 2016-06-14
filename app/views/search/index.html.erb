@@ -1,10 +1,11 @@
 <% @stores.each do |store| %>
- <ul>
-  <%= store.longName %>
-  <%= store.city %>
-  <%= store.distance %>
-  <%= store.phone %>
-  <%= store.storeType %>
-</ul>
+
+  <h5><%= link_to store.longName, store_path(id: store.storeId)%></h5>
+   <ul>
+    <li><%= store.city %></li>
+    <li><%= store.distance %></li>
+    <li><%= store.phone %></li>
+    <li><%= store.storeType %></li>
+  </ul>
   <br/>
 <% end %>

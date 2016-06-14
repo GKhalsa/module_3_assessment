@@ -11,4 +11,8 @@ class Store < OpenStruct
     stores.map {|store| Store.new(store)}
   end
 
+  def self.search_by_id(id)
+    service.get_store(id)
+  end
+
 end
