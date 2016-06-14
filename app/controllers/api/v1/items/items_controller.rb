@@ -16,5 +16,4 @@ class Api::V1::Items::ItemsController < Api::ApiController
     respond_with Item.find(params[:id]).destroy
   end
 
-
 end

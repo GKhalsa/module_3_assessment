@@ -12,10 +12,10 @@ RSpec.describe "GET /api/v1/items" do
     item = parsed_json.first
 
     expect(item).to eq(
-    "id" => item_one.id,
-    "name" => item_one.name,
+    "id"          => item_one.id,
+    "name"        => item_one.name,
     "description" => item_one.description,
-    "image_url" => item_one.image_url
+    "image_url"   => item_one.image_url
     )
   end
 end

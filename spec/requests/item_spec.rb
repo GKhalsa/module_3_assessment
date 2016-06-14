@@ -10,10 +10,10 @@ RSpec.describe "GET /api/v1/items/1" do
     expect(response.status).to eq(200)
 
     expect(parsed_json).to eq(
-    "id" => item_one.id,
-    "name" => item_one.name,
+    "id"          => item_one.id,
+    "name"        => item_one.name,
     "description" => item_one.description,
-    "image_url" => item_one.image_url
+    "image_url"   => item_one.image_url
     )
   end
 end
@@ -35,6 +35,11 @@ RSpec.describe "POST /ai/v1/items" do
 
     expect(response.status).to eq(201)
 
-    binding.pry
+    expect(parsed_json).to eq(
+    "id"          => 1,
+    "name"        => "sunny",
+    "description" => "suchwow",
+    "image_url"   => "www.blingbling.com"
+    )
   end
 end
