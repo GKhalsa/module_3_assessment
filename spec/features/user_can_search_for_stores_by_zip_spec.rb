@@ -8,12 +8,13 @@ RSpec.describe "user can enter in a zip code" do
     click_on "Search"
     expect(current_path).to eq("/search")
 
+    expect(page).to have_selector('h5', count: 15)
 
-    within("#Best Buy - Belmar") do
-      # expect(page).to have_content("")
-      # expect(page).to have_content("")
-      # expect(page).to have_content("")
-      # expect(page).to have_content("")
+    within("#303-270-9189") do
+      expect(page).to have_content("Denver")
+      expect(page).to have_content("3.25")
+      expect(page).to have_content("303-270-9189")
+      expect(page).to have_content("Mobile")
     end
   end
 end
