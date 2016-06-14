@@ -1,6 +1,8 @@
-# FactoryGirl.define do 
-#   factory :artist do
-#     name       "Bob Marley"
-#     image_path "http://cps-static.rovicorp.com/3/JPG_400/MI0003/146/MI0003146038.jpg"
-#   end
-# end
+FactoryGirl.define do
+
+  factory :item do
+    sequence(:name) { |n| "ol bobby#{n}" }
+    sequence(:description) { |n| "#{n}up" }
+    sequence(:image_url) { |n| "www.#{n}.com" }
+  end
+end
