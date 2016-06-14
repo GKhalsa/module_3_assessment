@@ -4,7 +4,7 @@ RSpec.descirbe "user can enter in a zip code" do
   it "returns a list of stores within constraints " do
     visit "/"
 
-    fill_in :search, with: "80202"
+    fill_in :query, with: "80202"
     click_on "search"
     expect(current_path).to eq("/search")
   end

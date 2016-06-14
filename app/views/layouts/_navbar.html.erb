@@ -20,7 +20,11 @@
         <a href="/orders">Orders</a>
       </li>
       <li>
-        <%= form_for :search %>
+        <%= form_tag("/search", method: "get") do %>
+          <%= label_tag(:query, "Search for:") %>
+          <%= text_field_tag(:query) %>
+          <%= submit_tag("Search") %>
+        <% end %>
       </li>
     </ul>
   </div>
