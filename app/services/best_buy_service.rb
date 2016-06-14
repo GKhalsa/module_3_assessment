@@ -17,11 +17,11 @@ class BestBuyService
   end
 
   def get_store(id)
+    # https://api.bestbuy.com/v1/stores(storeId=2740)?format=json&show=storeId,city,region&apiKey=qy8vdpfcgsxtfw657mnbu7nc
     response = connection.get do |req|
-      req.url "stores(area(#{zip},25))?"
-      req.params["show"] = "longName,city,distance,phone,storeType,storeId"
+      req.url "stores(storeId=#{id})?"
+      req.params["show"] = "longName,city,storeType,postalCode,region,address,hoursAmPm"
       req.params["format"] = "json"
-      req.params["pageSize"] = "15"
       req.params["apiKey"] = ENV['BEST_BUY_KEY']
     end
     parse(response)

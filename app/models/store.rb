@@ -12,7 +12,8 @@ class Store < OpenStruct
   end
 
   def self.search_by_id(id)
-    service.get_store(id)
+    store = service.get_store(id)["stores"].first
+    Store.new(store)
   end
 
 end
