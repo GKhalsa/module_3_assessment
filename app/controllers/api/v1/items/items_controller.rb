@@ -9,11 +9,12 @@ class Api::V1::Items::ItemsController < Api::ApiController
   end
 
   def create
-
+    respond_with Item.create(name: params["name"], description: params["description"], image_url: params["image_url"])
   end
 
   def destroy
-
+    respond_with Item.find(params[:id]).destroy
   end
-  
+
+
 end
