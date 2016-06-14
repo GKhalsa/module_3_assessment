@@ -1,7 +1,7 @@
 <% @stores.each do |store| %>
 
   <h5><%= link_to store.longName, store_path(id: store.storeId)%></h5>
-   <ul>
+   <ul id="<%= store.longName %>">
     <li><%= store.city %></li>
     <li><%= store.distance %></li>
     <li><%= store.phone %></li>
