@@ -12,6 +12,10 @@ gem "faker"
 gem "therubyracer"
 gem "less-rails-bootstrap"
 gem "faraday"
+gem "responders"
+gem 'figaro'
+gem "active_model_serializers", github: "rails-api/active_model_serializers"
+
 
 group :development do
   gem "spring"
@@ -23,7 +27,9 @@ group :development, :test do
   gem "pry", :require => "pry"
   gem 'capybara'
   gem 'launchy'
-  gem 'figaro'
+  gem "factory_girl_rails", "~> 4.0"
+  gem "database_cleaner"
+  gem 'shoulda-matchers'
 end
 
 group :test do
